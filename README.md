@@ -1,9 +1,9 @@
 
 # A timeline typst package
 
-This package uses [cetz]() to provide a interface in
-typst for making horizontal timelines, inspired by the latex
-[`chronology`](https://ctan.org/pkg/chronology) package.
+This package uses [cetz](https://typst.app/universe/package/cetz) to
+provide a interface in typst for making horizontal timelines, inspired
+by the latex [`chronology`](https://ctan.org/pkg/chronology) package.
 
 It provides the following to work with timelines.
 - A event and eventspan object for grouping data
@@ -63,7 +63,7 @@ constructor without setting any of the optional style settings.
 
 The settable properties for customizing the look
 of the timeline. Visual examples can be seen in
-the example.pdf
+the [example.pdf](example.pdf)
 
 ## event
 
@@ -82,6 +82,18 @@ event with the month and day fields.
 | month     | The month represented as an integer (1-12) |
 | day       | The day as an integer (1-31)  |
 
+## eventspan
+
+Obligatory fields for an eventspan.
+
+| Property    | Description |
+| -------     | ----------- |
+| title       | Title of the event |
+| start-point | It's starting point as an integer |
+| end-point   | It's end-point as an integer |
+
+See the optional styling properties for location
+and color setting of the eventspan under timeline.
 
 ## timeline
 | Property  | Description |
