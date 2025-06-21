@@ -7,7 +7,7 @@
 #show figure: set block(spacing: 0.8cm)
 
 
-= Testing with default package style settings
+= Example with default package style settings
 The default settings for the styling in the package, that
 is provided if the properties are left unset by the writer
 in the function call.
@@ -28,7 +28,6 @@ in the function call.
     // event("birth of jesus", 0, 12, 24),
     // event(title: "death of jesus",  year: 40, month: 5, day: 12),
     event(title:"First space ship sighting", year: 570, month: 4, day: 16),
-    event(title: "testing", year: 570)
   ),
   eventspans: (
     eventspan(
@@ -47,7 +46,7 @@ in the function call.
 #test
 
 
-= Testing with day and month fields
+= Example with day and month fields
 
 In previous example it is only the year field that is being set
 for the events, here the day and month field are also set.
@@ -64,7 +63,7 @@ for the events, here the day and month field are also set.
 
 #date-distiction
 
-= Testing with setting alternative colors for the event spans
+= Example with setting alternative colors for the event spans
 
 
 #let eventspanlist = (
@@ -78,27 +77,25 @@ for the events, here the day and month field are also set.
   startyear: -200,
   endyear: 1000,
   events: (
-    event(title: "birth of jesus", year: 0),
-    event(title: "death of jesus", year:40),
+    event(title: "The calendar starts", year: 0),
     event(title: "Breaking bad -  old school", year: 300)),
   eventspans: (
     eventspan(title: "Viking period", start-point: 0, end-point: 900, color: green),
-    eventspan(title: "Random roman stuff", start-point: -100, end-point: -30)
+    eventspan(title: "Random stuff", start-point: -100, end-point: -30)
   ),
 )
 
 
 #alternative-colors
 
-= Testing with alternative spannheights
+= Examples of alternative spannheights
 
 #let testw = timeline(
   interval: 300,
   startyear: -200,
   endyear: 1000,
   events: (
-    event(title: "birth of jesus", year: 0),
-    event(title: "death of jesus", year: 40),
+    event(title: "The calendar starts", year: 0),
     event(title: "Breaking bad -  old school", year: 300)
   ),
 
@@ -123,8 +120,7 @@ for the events, here the day and month field are also set.
   startyear: -200,
   endyear: 1000,
   events: (
-    event(title: "birth of jesus", year: 0),
-    event(title: "death of jesus", year: 40),
+    event(title: "The calendar starts", year: 0),
     event(title: "Breaking bad -  old school", year: 300)
   ),
   eventspans: (
@@ -147,8 +143,7 @@ for the events, here the day and month field are also set.
   startyear: -200,
   endyear: 1000,
   events: (
-    event(title: "birth of jesus", year: 0),
-    event(title: "death of jesus", year: 40),
+    event(title: "The calendar starts", year: 0),
     event(title: "Breaking bad -  old school", year: 300)
   ),
   eventspans: (
