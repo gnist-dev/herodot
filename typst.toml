@@ -12,4 +12,4 @@ description = "A package for making linear timelines, inspired by chronology."
 repository = "https://github.com/gnist-dev/herodot"
 categories = ["visualization"]
 discplines = ["history", "philosophy"]
-exclude = ["example.pdf", "*.pdf"]
+exclude = ["example.pdf", "*.pdf", "example.typ"]
