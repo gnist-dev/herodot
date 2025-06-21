@@ -10,6 +10,8 @@ It provides the following to work with timelines.
   you want displayed on the timeline.
 - The timeline function itself. 
 
+![image](examples/example-1.png)
+![image](examples/example-2.png)
 
 ## Example
 
