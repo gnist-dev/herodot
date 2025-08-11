@@ -32,6 +32,7 @@
   spanheight-negative-y: 0,
   numbering-rotation: 0deg,
   event-rotation: 45deg,
+  span-rotation: 0deg,
   ) = {
 
 
@@ -153,9 +154,9 @@
           // content descriptions for event
           
           content(
-            (event-pos.first(), line-pos1.last() + 1),
+            (event-pos.first(), line-pos1.last() + 0.7),
             angle: event-rotation,
-            // anchor: "base-west",
+            anchor: "mid-west",
             [ #x.title ]
           )
  
@@ -214,7 +215,7 @@
               // position , also pulls in the eventspans timeline offset variable (x.last)
               ((event-pos-x-1 + event-pos-x-0)/2 , -span-y-offset - x.timeline-offset),
               anchor: "mid",
-              angle: event-rotation,
+              angle: span-rotation,
               box(width: 1cm, )[ #align(center, x.title ) ]
             )
           }
