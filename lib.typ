@@ -1,4 +1,4 @@
-#import "@preview/cetz:0.3.4"
+#import "@preview/cetz:0.4.1"
 #import "src/primitives.typ": event, eventspan
 #import "src/functions.typ": eventspanlocation, eventlocation
 
