@@ -33,6 +33,8 @@
   numbering-rotation: 0deg,
   event-rotation: 45deg,
   span-rotation: 0deg,
+
+  span-offset: .2,
   ) = {
 
 
@@ -213,7 +215,7 @@
             // content for event span
             content(
               // position , also pulls in the eventspans timeline offset variable (x.last)
-              ((event-pos-x-1 + event-pos-x-0)/2 , -span-y-offset - x.timeline-offset),
+              ((event-pos-x-1 + event-pos-x-0)/2 , -span-y-offset - x.timeline-offset - span-offset),
               anchor: "mid",
               angle: span-rotation,
               box(width: 1cm, )[ #align(center, x.title ) ]
