@@ -45,6 +45,46 @@ in the function call.
 
 #test
 
+= Vertical example using rotate with event-rotation and span-rotation manually set
+
+
+#let temp2 = timeline(
+  startyear: 0,
+  endyear: 50,
+  numbering-rotation: 90deg,
+  event-rotation: 90deg,
+  span-rotation: 90deg,
+  length-of-timeline: 12,
+  events:
+    (
+      event(year: 8, title: "event 1"),
+      event(year: 24, title: "event 2"),
+    ),
+  eventspans: (
+    eventspan(start-point: 12, end-point: 14, title: "span 1" ),
+    eventspan(start-point: 20, end-point: 45, title: "span 2"),
+  ),
+)
+
+
+#grid(
+  columns: (40%, auto),
+  [
+    #rotate(
+      90deg,
+      reflow: true,
+      temp2,
+    )
+  ],
+  [
+  #v(10em)
+  The vertical timeline is made by wrapping a timeline function
+  in a `#rotate(90deg)` function, and with the rotation of the text
+  for the events and eventspans with the `event-rotation` and
+  `span-rotation` fields in the timeline function manually set. ]
+)
+
+
 
 = Example with day and month fields
 
