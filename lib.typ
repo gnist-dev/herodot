@@ -30,6 +30,8 @@
   spanheight: 0.5,
   spanheight-positive-y: 0,
   spanheight-negative-y: 0,
+  numbering-rotation: 0deg,
+  event-rotation: 45deg,
   ) = {
 
 
@@ -63,6 +65,7 @@
       content(
         (timeline-startpoint.first() - startyear-distance-timeline, 0),
         // anchor: "east",
+        angle: numbering-rotation,
         padding: (
          rest: .1,
          // right: .6, 
@@ -77,6 +80,7 @@
       }
       content(
         (timeline-endpoint.first() + endyear-distance-timeline, 0),
+        angle: numbering-rotation,
         [ #endyear ]
       )
 
@@ -104,6 +108,7 @@
             if startyear <= 0{
               content(
                 (posx, -0.3),
+                angle: numbering-rotation,
                 [#interval-year]
               )
             }
@@ -141,14 +146,16 @@
           // content descriptions for the year
           content(
             (event-pos.first(),0.7),
+            angle: numbering-rotation,
             [ #x.year ]
+            // [ #rotate(30deg, x.year ]
           )
           // content descriptions for event
           
           content(
-            (event-pos.first(), line-pos1.last() + 0.7),
-            angle: 45deg,
-            anchor: "base-west",
+            (event-pos.first(), line-pos1.last() + 1),
+            angle: event-rotation,
+            // anchor: "base-west",
             [ #x.title ]
           )
  
@@ -207,6 +214,7 @@
               // position , also pulls in the eventspans timeline offset variable (x.last)
               ((event-pos-x-1 + event-pos-x-0)/2 , -span-y-offset - x.timeline-offset),
               anchor: "mid",
+              angle: event-rotation,
               box(width: 1cm, )[ #align(center, x.title ) ]
             )
           }
