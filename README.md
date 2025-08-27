@@ -105,6 +105,8 @@ and color setting of the eventspan under timeline.
 | interval  | Interval between years to be marked on the timeline |
 | events    | Array of events to put on the timeline |
 | eventspans | Array of eventspans to put on the timeline |
+| event-rotation | The rotation of the text title of events (default: 45deg)|
+| span-rotation | The rotation of the text title of eventspans (default: 0deg)|
 
 | Optional styling properties | Description |
 | ------                      | ------      |
