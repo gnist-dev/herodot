@@ -20,7 +20,7 @@ constructor without setting any of the optional style settings.
 
 ```typst
 
-#import "@preview/herodot:0.1.0" : * 
+#import "@preview/herodot:0.2.0" : * 
 
 #let scifi-time = timeline(
   interval: 200,
