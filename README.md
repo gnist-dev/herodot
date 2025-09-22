@@ -12,6 +12,8 @@ It provides the following to work with timelines.
 
 ![image](examples/example-1.png)
 ![image](examples/example-2.png)
+![image](examples/example-3.png)
+![image](examples/example-4.png)
 
 ## Example
 
@@ -65,7 +67,7 @@ constructor without setting any of the optional style settings.
 
 The settable properties for customizing the look
 of the timeline. Visual examples can be seen in
-the [example.pdf](example.pdf)
+the [example.pdf](examples/example.pdf)
 
 ## event
 
@@ -107,6 +109,8 @@ and color setting of the eventspan under timeline.
 | eventspans | Array of eventspans to put on the timeline |
 | event-rotation | The rotation of the text title of events (default: 45deg)|
 | span-rotation | The rotation of the text title of eventspans (default: 0deg)|
+| event-display | The date information displayed along the event title, the default is year, but i can be either one of day/month/year/day-month, day-month-year or none. |
+| month-locale | The string locale of the months to be used to display it, by default english, but an array of strings can be manually passed to override it and used alternatively. |
 
 | Optional styling properties | Description |
 | ------                      | ------      |

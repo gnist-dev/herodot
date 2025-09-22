@@ -88,7 +88,7 @@ in the function call.
 
 = Example with day and month fields
 
-In previous example it is only the year field that is being set
+In the previous example it is only the year field that is being set
 for the events, here the day and month field are also set.
 
 #let date-distiction = timeline(
@@ -96,12 +96,68 @@ for the events, here the day and month field are also set.
   endyear: 15,
   interval: 1,
   events: (
-    event(day: 15, month: 7, year: 12, title: "July"),
-    event(day: 15, month: 10, year: 12, title: "October"),
+    event(day: 15, month: 7, year: 12, title: "Battle of July"),
+    event(day: 15, month: 10, year: 12, title: "October brawl"),
   )
 )
 
 #date-distiction
+
+
+You can however also set the display field for what information,
+you want displayed along with the event title for the timeline.
+You might want to have month/day/none/day-month/day-month-year displayed instead of the
+default of year. This is currently a per timeline setting, with
+the field `event-display`.
+
+
+#timeline(
+  startyear: 0,
+  endyear: 1,
+  interval: 1,
+  event-display: "month",
+  
+  events: (
+    event(day: 15, month: 2, year: 0, title: "Coronation of the book"),
+    event(day: 15, month: 10, year: 0, title: "The book is copied"),
+  )
+)
+
+Currently the package uses a simple localisation scheme, where one can
+manually provide an alternative locale with the string version of the
+months through `month-locale`, which has to be provided as an array of
+the strings corresponding to their nummerical sequential order. For
+this reason is the `event-display: "day-month"` and `event-display:
+"day-month-year"`a bit simple as seen below.#footnote[This package
+currently doesn't use typst's built-in datetime variable/function, but when
+the built-in datetime function does support other locales than english,
+it will probably be switched to for nicer formatting.]
+
+#timeline(
+  startyear: 0,
+  endyear: 1,
+  interval: 1,
+  event-display: "day-month",
+  
+  events: (
+    event(day: 15, month: 2, year: 0, title: "Coronation of the book"),
+    event(day: 1, month: 10, year: 0, title: "The book is copied"),
+  )
+)
+
+// Below an example of `event-display: "none"`
+#timeline(
+  startyear: 0,
+  endyear: 100,
+  interval: 20,
+  event-display: "day-month-year",
+  
+  events: (
+    event(day: 15, month: 2, year: 10, title: "Coronation of the book"),
+    event(day: 1, month: 10, year: 80, title: "The book is copied"),
+  )
+)
+
 
 = Example with setting alternative colors for the event spans
 

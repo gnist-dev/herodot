@@ -176,6 +176,10 @@
               x.day
             } else if event-display == "none" {
               
+            } else if event-display == "day-month" {
+              [#x.day, #month-conversion(nummerical: x.month, locale: month-locale) ]
+            } else if event-display == "day-month-year" {
+              [#x.day, #month-conversion(nummerical: x.month, locale: month-locale), #x.year ]
             }
             ]
             
