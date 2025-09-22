@@ -84,3 +84,25 @@
   }
 }
 
+
+#let month-conversion(
+  nummerical: 1,
+  locale: (
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ) 
+) = {
+    if nummerical - 1 != -1 {
+      return locale.at(nummerical - 1)
+    }
+}

@@ -1,6 +1,6 @@
 #import "@preview/cetz:0.4.1"
 #import "src/primitives.typ": event, eventspan
-#import "src/functions.typ": eventspanlocation, eventlocation
+#import "src/functions.typ": eventspanlocation, eventlocation, month-conversion
 
 
 #let timeline(
@@ -35,6 +35,23 @@
   span-rotation: 0deg,
 
   span-offset: .2,
+
+  event-display: "year",
+  month-locale: (
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ), 
+
   ) = {
 
 
@@ -150,7 +167,18 @@
           content(
             (event-pos.first(),0.7),
             angle: numbering-rotation,
-            [ #x.year ]
+
+            [ #if event-display == "year" {
+               x.year 
+            } else if event-display == "month" {
+              month-conversion(nummerical: x.month, locale: month-locale)
+            } else if event-display == "day" {
+              x.day
+            } else if event-display == "none" {
+              
+            }
+            ]
+            
             // [ #rotate(30deg, x.year ]
           )
           // content descriptions for event
