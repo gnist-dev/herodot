@@ -2,13 +2,23 @@
 # A timeline typst package
 
 This package uses [cetz](https://typst.app/universe/package/cetz) to
-provide a interface in typst for making horizontal timelines, inspired
+provide a interface in typst for making timelines, inspired
 by the latex [`chronology`](https://ctan.org/pkg/chronology) package.
 
 It provides the following to work with timelines.
 - A event and eventspan object for grouping data
   you want displayed on the timeline.
 - The timeline function itself. 
+
+For getting started quickly add the following to your document:
+
+```typst
+#import "@preview/herodot:0.3.0" : * 
+
+```
+
+See the visual examples below and some examples at the end for what
+fields and options the package has.
 
 ![image](examples/example-1.png)
 ![image](examples/example-2.png)
@@ -22,7 +32,7 @@ constructor without setting any of the optional style settings.
 
 ```typst
 
-#import "@preview/herodot:0.2.0" : * 
+#import "@preview/herodot:0.3.0" : * 
 
 #let scifi-time = timeline(
   interval: 200,
