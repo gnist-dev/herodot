@@ -188,7 +188,8 @@
           // content descriptions for event
           
           content(
-            (event-pos.first(), line-pos1.last() + 0.7),
+            (event-pos.first(),
+            line-pos1.last() + if event-display == "none" { 0.15 } else { 0.7 }),
             angle: event-rotation,
             anchor: "mid-west",
             [ #x.title ]
