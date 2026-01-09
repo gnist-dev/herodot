@@ -13,7 +13,7 @@ It provides the following to work with timelines.
 For getting started quickly add the following to your document:
 
 ```typst
-#import "@preview/herodot:0.3.0" : * 
+#import "@preview/herodot:0.4.0" : * 
 
 ```
 
