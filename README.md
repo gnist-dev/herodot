@@ -13,7 +13,7 @@ It provides the following to work with timelines.
 For getting started quickly add the following to your document:
 
 ```typst
-#import "@preview/herodot:0.4.0" : * 
+#import "@preview/herodot:1.0.0" : * 
 
 ```
 
@@ -24,6 +24,7 @@ fields and options the package has.
 ![image](examples/example-2.png)
 ![image](examples/example-3.png)
 ![image](examples/example-4.png)
+![image](examples/example-5.png)
 
 ## Example
 
@@ -32,7 +33,7 @@ constructor without setting any of the optional style settings.
 
 ```typst
 
-#import "@preview/herodot:0.4.0" : * 
+#import "@preview/herodot:1.0.0" : * 
 
 #let scifi-time = timeline(
   interval: 200,
@@ -105,6 +106,10 @@ Obligatory fields for an eventspan.
 | title       | Title of the event |
 | start-point | It's starting point as an integer |
 | end-point   | It's end-point as an integer |
+| spanheight                  | height/width of the eventspan (the same distance on both sides of the timeline) |  
+| spanheight-positive-y       | Alternative height/width of the eventspan above the timeline (allows for alternative heights between the distance above and below the timeline) |  
+| spanheight-negative-y       | Alternative height/width of the eventspan below the timeline (allows for alternative heights between the distance above and below the timeline) |  
+
 
 See the optional styling properties for location
 and color setting of the eventspan under timeline.
@@ -126,7 +131,4 @@ and color setting of the eventspan under timeline.
 | ------                      | ------      |
 | length-of-timeline          | Length of timeline in cm |
 | linestroke                  | The width and color of the lines making up the timeline |
-| spanheight                  | height/width of the eventspan (the same distance on both sides of the timeline) |  
-| spanheight-positive-y       | Alternative height/width of the eventspan above the timeline (allows for alternative heights between the distance above and below the timeline) |  
-| spanheight-negative-y       | Alternative height/width of the eventspan below the timeline (allows for alternative heights between the distance above and below the timeline) |  
 

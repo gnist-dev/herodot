@@ -1,4 +1,4 @@
-#import "@local/herodot:0.5.0": *
+#import "@local/herodot:1.0.0": *
 #set text(font: "New Computer Modern")
 
 // #set text(font: "Computer Modern")
