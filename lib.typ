@@ -27,9 +27,6 @@
   // optional styling elements
   length-of-timeline: 14,
   linestroke: 0.3pt + black, 
-  spanheight: 0.5,
-  spanheight-positive-y: 0,
-  spanheight-negative-y: 0,
   numbering-rotation: 0deg,
   event-rotation: 45deg,
   span-rotation: 0deg,
@@ -88,7 +85,6 @@
         angle: numbering-rotation,
         padding: (
          rest: .1,
-         // right: .6, 
         ),
         [ #startyear ]
       )
@@ -156,7 +152,7 @@
             )
 
           // line for vertical marking
-          let line-pos1 = (event-pos.first(), 0.4)
+          let line-pos1 = (event-pos.first(), x.offset)
           line(
             event-pos,
             line-pos1,
@@ -165,7 +161,7 @@
 
           // content descriptions for the year
           content(
-            (event-pos.first(),0.7),
+            (event-pos.first(), if x.offset > 0 { x.offset + 0.3} else { x.offset - 0.3}),
             angle: numbering-rotation,
 
             [ #if event-display == "year" {
@@ -189,8 +185,19 @@
           
           content(
             (event-pos.first(),
-            line-pos1.last() + if event-display == "none" { 0.15 } else { 0.7 }),
-            angle: event-rotation,
+            // the distance from the timeline to the event text (if
+            // statements to account for whethet it's above or below
+            // the line)
+            line-pos1.last() + if event-display == "none" {
+                if x.offset > 0 { 0.15
+              } else { -0.15 }
+            } else {
+              if x.offset > 0 { 0.7 } else { -0.7 }
+            }
+            ),
+
+            // anchoring and angling the text
+            angle: if x.offset > 0 { event-rotation } else { -event-rotation },
             anchor: "mid-west",
             [ #x.title ]
           )
@@ -212,9 +219,9 @@
               eventyear: x.end-point
             )
 
-            let span-y-offset = spanheight
-            if spanheight-negative-y == 0 and spanheight-positive-y == 0{
-              span-y-offset = spanheight
+            let span-y-offset = x.spanheight
+            if x.spanheight-negative-y == 0 and x.spanheight-positive-y == 0{
+              span-y-offset = x.spanheight
 
               // block of the event span
               rect(
@@ -229,16 +236,16 @@
             }
 
             
-            if spanheight-negative-y != 0 or spanheight-positive-y != 0{
+            if x.spanheight-negative-y != 0 or x.spanheight-positive-y != 0{
 
               // block of the event span
               rect(
                  (
                   event-pos-x-0,
-                  spanheight-positive-y),
+                  x.spanheight-positive-y),
                  (
                   event-pos-x-1,
-                  -spanheight-negative-y),
+                  -x.spanheight-negative-y),
                  fill: x.color.transparentize(60%),
                  stroke: x.color.transparentize(60%),
                  radius: 5pt

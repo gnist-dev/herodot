@@ -1,4 +1,4 @@
-#import "lib.typ": *
+#import "@local/herodot:0.5.0": *
 #set text(font: "New Computer Modern")
 
 // #set text(font: "Computer Modern")
@@ -184,7 +184,7 @@ it will probably be switched to for nicer formatting.]
 
 #alternative-colors
 
-= Examples of alternative spannheights
+= Examples of alternative spanheights and event offsets
 
 #let testw = timeline(
   interval: 300,
@@ -192,7 +192,18 @@ it will probably be switched to for nicer formatting.]
   endyear: 1000,
   events: (
     event(title: "The calendar starts", year: 0),
-    event(title: "Breaking bad -  old school", year: 300)
+    event(
+      title: "Breaking bad -  old school",
+      year: 300,
+      offset: 2,
+      
+    ),
+    event(
+      title: "Taxation on sheep begin",
+      year: 400,
+      offset: -1.9,
+      
+    )
   ),
 
   eventspans: (
@@ -200,16 +211,34 @@ it will probably be switched to for nicer formatting.]
       title: "Viking period",
       start-point: 0,
       end-point: 900,
-      color: green
+      color: green,
+      // spanheight: 1,
+      spanheight-negative-y: 0.7,
+      spanheight-positive-y: 0.2
     ),
     eventspan(
       title: "Random roman stuff",
       start-point: -100,
-      end-point: -30
-    )
+      end-point: 300,
+      spanheight-negative-y: -0.5, 
+      timeline-offset: 1,
+      spanheight-positive-y: 1.0, 
+    ),
+    
+    eventspan(
+      title: "Sheep civil war",
+      start-point: 700,
+      end-point: 1000,
+      spanheight-negative-y: 2, 
+      timeline-offset: 2.3,
+      spanheight-positive-y: -1.0, 
+      color: purple,
+    ),
   ),
-  spanheight-positive-y: 0.5
+
+  // spanheight-positive-y: 0.5
 )
+
 
 #let testw2 = timeline(
   interval: 300,
@@ -224,14 +253,16 @@ it will probably be switched to for nicer formatting.]
       title: "Viking period",
       start-point:  0,
       end-point: 900,
-      color: green),
+      color: green,
+      spanheight: 1,
+    ),
     eventspan(
       title: "Random roman stuff",
       start-point: -100,
-      end-point: -30)
+      end-point: -30,
+      spanheight: 0.2,
+      )
     ),
-  spanheight-positive-y: 0,
-  spanheight-negative-y: 0.3
 )
 
 #let testw3 = timeline(
@@ -243,14 +274,29 @@ it will probably be switched to for nicer formatting.]
     event(title: "Breaking bad -  old school", year: 300)
   ),
   eventspans: (
-    eventspan(title: "Viking period", start-point: 0, end-point: 900, color: green),
-    eventspan(title: "Random roman stuff", start-point: -100, end-point: -30)),
-  spanheight-positive-y: 0.6,
-  spanheight-negative-y: 0.3
+    eventspan(
+      title: "Viking period",
+      start-point: 0,
+      end-point: 900,
+      color: green,
+      spanheight-negative-y: 0.4,
+      spanheight-positive-y: 0,
+      ),
+    eventspan(
+      title: "Random roman stuff",
+      start-point: -100,
+      end-point: 300,
+      spanheight-negative-y: 0,
+      spanheight-positive-y: 0.5,
+      )
+    ),
 )
 
+== The everything all at once example 
 #testw
+== Just the spanheights on the eventspans
 #testw2
+== Alternating spanheights on the eventspans
 #testw3
 
 
